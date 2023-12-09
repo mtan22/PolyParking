@@ -2,7 +2,7 @@
 // src/components/Map.js
 import React, { useEffect } from 'react';
 import mapboxgl from 'mapbox-gl';
-import './Map.css'; // Import your Map.css file
+import './Map.css'; 
 
 const Map = () => {
   useEffect(() => {
@@ -20,6 +20,34 @@ const Map = () => {
     draggable: true
     }).setLngLat([-120.6627, 35.3006])
     .addTo(map);
+
+    const legend = document.createElement('div');
+    legend.className = 'legend';
+    legend.innerHTML = `
+      <div class="legend-rectangle"></div>
+      <div class="legend-content">
+        <h3>Legend</h3>
+        <div class="legend-item">
+          <div class="marker" style="background-color: orange;"></div>
+          <span>Orange Lots</span>
+        </div>
+        <div class="legend-item">
+            <svg class="star" width="20" height="20" viewBox="0 0 20 20">
+            <polygon points="10,0 13,7 20,7 14,12 17,20 10,15 3,20 6,12 0,7 7,7" fill="purple" />
+          </svg>
+          <span>Staff Lots</span>
+        </div>
+        <div class="legend-item">
+          <div class="triangle"></div>
+          <span>Grand Structure Lots</span>
+        </div>
+        <!-- Add more legend items as needed -->
+      </div>
+    `;
+
+
+    map.getContainer().appendChild(legend);
+
 
     return () => {
     map.remove();

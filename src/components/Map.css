@@ -9,7 +9,66 @@
 .marker {
     width: 20px;
     height: 20px;
-    background-color: red;
+    color: white;
     border-radius: 50%;
+
   }
+
+  @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
   
+/* Change styles for all span elements inside .legend */
+.legend span {
+  font-family: 'Libre Baskerville', serif; /* Use the correct font family name */
+  color: white;
+  font-size: 1rem;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  /* Other styles */
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent; /* Adjust size as needed */
+  border-right: 8px solid transparent; /* Adjust size as needed */
+  border-bottom: 12px solid blue; /* Adjust size and color as needed */
+}
+
+  
+.legend {
+  position: absolute;
+  top: 150px;
+  right: 50px;
+  /* Additional styling as needed */
+}
+  
+.legend {
+  background-color: darkgreen;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Apply the Times New Roman font to the h1 element */
+.legend h3 {
+  font-family: 'Libre Baskerville', serif; /* Use the correct font family name */
+  /* Other styling properties */
+  color: #FFD700;
+  text-align: center;
+  font-size: 1.2rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Adjust the shadow values as needed */
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.legend-rectangle {
+ 
+  background-color: green; /* Change to your desired color */
+  margin-bottom: 10px; /* Space between legend and rectangle */
+}

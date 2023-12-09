@@ -13,15 +13,37 @@
   }
 }
 
+/* App.css */
+
+/* Modify the header section to change border color */
 .App-header {
-  background-color: #282c34;
+  background-color: darkgreen; /* Change the background color if needed */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  width: 100%; /* Ensure the width covers the entire viewport */
+  box-sizing: border-box; /* Ensure border width is included in element's total width */
+}
+
+
+/* Import Google Font for "Cal Poly Parking" title */
+/* Import Abolition font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+
+/* Apply the Times New Roman font to the h1 element */
+h1 {
+  font-family: 'Libre Baskerville', serif; /* Use the correct font family name */
+  /* Other styling properties */
+  color: #FFD700;
+  font-size: 3rem; /* Adjust the font size as needed */
+  margin-bottom: 20px; /* Add some space between title and map */
+  letter-spacing: 5px; /* Adjust the letter spacing as needed */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Adjust the shadow values as needed */
+
+
 }
 
 .App-link {
