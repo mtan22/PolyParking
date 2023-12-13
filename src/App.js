@@ -1,7 +1,7 @@
 // App.js
 import React from 'react';
-import Map from './components/Map';
-import './App.css'; 
+import './App.css';
+import Map from "./components/Map";
 
 const App = () => {
   return (

@@ -2,12 +2,13 @@
 // src/components/Map.js
 import React, { useEffect } from 'react';
 import mapboxgl from 'mapbox-gl';
-import './Map.css'; 
+import './Map.css';
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 const Map = () => {
   useEffect(() => {
     mapboxgl.accessToken = 'pk.eyJ1IjoibWljaGJ1YiIsImEiOiJjbHA5YmE5NDYwMHpmMm1vZHNyN3RwbGM1In0.TBduPGWrLd0Im9Tdy-ybNA';
-    
+
     const map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v11',
@@ -15,11 +16,106 @@ const Map = () => {
         zoom: 14,
       });
 
-    const marker = new mapboxgl.Marker({
-    color: "#FFFFFF",
-    draggable: true
-    }).setLngLat([-120.6627, 35.3006])
-    .addTo(map);
+
+    const geojson = {
+      type: 'FeatureCollection',
+      features: [
+        {
+          type: 'Feature',
+          lotType : 'Orange',
+          geometry: {
+            type: 'Point',
+            coordinates: [-120.66368194833512, 35.30675519359775]
+          },
+          properties: {
+            title: 'H-14',
+            description: 'Test'
+          }
+        },
+        {
+          type: 'Feature',
+          lotType : 'Orange',
+          geometry: {
+            type: 'Point',
+            coordinates: [-120.66225690641959, 35.30594529945929]
+          },
+          properties: {
+            title: 'H-16',
+            description: 'Test'
+          }
+        },
+        {
+          type: 'Feature',
+          lotType : 'Orange',
+          geometry: {
+            type: 'Point',
+            coordinates: [-120.66366885525774, 35.30492537989601]
+          },
+          properties: {
+            title: 'H-12',
+            description: 'Test'
+          }
+        },
+        {
+          type: 'Feature',
+          lotType : 'Triangle',
+          geometry: {
+            type: 'Point',
+            coordinates: [-120.66492175930149, 35.29763768935735]
+          },
+          properties: {
+            title: 'C1',
+            description: 'Test'
+          }
+        },
+        {
+          type: 'Feature',
+          lotType : 'Triangle',
+          geometry: {
+            type: 'Point',
+            coordinates: [-120.66451328473349, 35.29746926583917]
+          },
+          properties: {
+            title: 'C3',
+            description: 'Test'
+          }
+        },
+        {
+          type: 'Feature',
+          lotType : 'Triangle',
+          geometry: {
+            type: 'Point',
+            coordinates: [-120.66488441839438, 35.297520174758155]
+          },
+          properties: {
+            title: 'C4',
+            description: 'Test'
+          }
+        }
+      ]
+    };
+
+    // add markers to map
+    for (const feature of geojson.features) {
+      // create a HTML element for each feature
+      const el = document.createElement('div');
+      if(feature.lotType === 'Orange'){
+        el.className = 'orange-marker';
+      }
+      else{
+        el.className = 'triangle-marker';
+      }
+
+
+      // make a marker for each feature and add to the map
+      new mapboxgl.Marker(el).setLngLat(feature.geometry.coordinates)
+          .setPopup(
+              new mapboxgl.Popup({ offset: 25 }) // add popups
+                  .setHTML(
+                      `<h3>${feature.properties.title}</h3><p>${feature.properties.description}</p>`
+                  )
+          ).addTo(map);
+    }
 
     const legend = document.createElement('div');
     legend.className = 'legend';
@@ -28,18 +124,18 @@ const Map = () => {
       <div class="legend-content">
         <h3>Legend</h3>
         <div class="legend-item">
-          <div class="marker" style="background-color: orange;"></div>
+          <div class="orangeLot" style="background-color: orange;"></div>
           <span>Orange Lots</span>
         </div>
         <div class="legend-item">
             <svg class="star" width="20" height="20" viewBox="0 0 20 20">
             <polygon points="10,0 13,7 20,7 14,12 17,20 10,15 3,20 6,12 0,7 7,7" fill="purple" />
           </svg>
-          <span>Staff Lots</span>
+          <span>Grand Structure Lots</span>
         </div>
         <div class="legend-item">
           <div class="triangle"></div>
-          <span>Grand Structure Lots</span>
+          <span>Staff Lots</span>
         </div>
         <!-- Add more legend items as needed -->
       </div>
@@ -53,7 +149,7 @@ const Map = () => {
     map.remove();
     };
   }, []);
-  
+
     return <div id="map" className="map" />;
   };
   

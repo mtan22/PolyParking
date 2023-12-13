@@ -6,13 +6,37 @@
   }
 
 /* Map.css */
-.marker {
-    width: 20px;
-    height: 20px;
-    color: white;
-    border-radius: 50%;
-
+.orange-marker {
+  background-size: cover;
+  background-color: orange;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
   }
+.triangle-marker {
+  width: 10px;
+  height: 5px;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 12px solid blue;
+}
+
+.orangeLot {
+  width: 20px;
+  height: 20px;
+  color: white;
+  border-radius: 50%;
+}
+
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
 
   @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
   
