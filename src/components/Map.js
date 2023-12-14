@@ -29,7 +29,7 @@ const Map = () => {
           },
           properties: {
             title: 'H-14',
-            description: 'Test'
+            description: 'Spaces Available: 365'
           }
         },
         {
@@ -41,7 +41,8 @@ const Map = () => {
           },
           properties: {
             title: 'H-16',
-            description: 'Test'
+            description: 'Commuter Spaces Available: 504 -------\n' +
+            'Staff Spaces Available: 36 -------',
           }
         },
         {
@@ -53,7 +54,8 @@ const Map = () => {
           },
           properties: {
             title: 'H-12',
-            description: 'Test'
+            description: 'Commuter Spaces Available: 409 -------\n' +
+            'Staff Spaces Available: 25 -------',
           }
         },
         {
