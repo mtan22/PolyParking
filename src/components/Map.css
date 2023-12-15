@@ -15,12 +15,13 @@
   cursor: pointer;
 }
 .triangle-marker {
-  width: 10px;
-  height: 5px;
+  width: 0;
+  height: 0;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
   border-bottom: 12px solid blue;
 }
+
 .square-marker {
   width: 20px;
   height: 20px;
@@ -55,10 +56,11 @@
 .triangle {
   width: 0;
   height: 0;
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-bottom: 12px solid blue;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 20px solid blue;
 }
+
 
 .legend {
   position: absolute;

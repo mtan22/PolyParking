@@ -68,7 +68,23 @@ const Map = () => {
           },
           properties: {
             title: "C1",
-            description: "Test",
+            description: "Disabled Spaces Available: 2\n" +
+            "Staff Spaces Available: 39",
+          },
+        },
+        {
+          type: "Feature",
+          lotType: "Triangle",
+          geometry: {
+            type: "Point",
+            coordinates: [-120.6650078,35.2976559],
+          },
+          properties: {
+            title: "C2",
+            description: "Disabled Spaces Available: 12\n" +
+            "Staff Spaces Available: 114\n" +
+            "Sponsored Guest Spaces Available: 11\n" +
+            "Van Pool Spaces Available: 1\\n",
           },
         },
         {
@@ -80,7 +96,10 @@ const Map = () => {
           },
           properties: {
             title: "C3",
-            description: "Test",
+            description: "Staff Spaces Available: 40\n" +
+            "Sponsored Guest Spaces Available: 1\n" + 
+            "Disabled Spaces Available: 3\n" +
+            "Metered Spaces Available: 4\n",
           },
         },
         {
@@ -92,7 +111,39 @@ const Map = () => {
           },
           properties: {
             title: "C4",
-            description: "Test",
+            description: "Staff Spaces Available: 26\n" +
+            "Sponsored Guest Spaces Available: 2\n" +
+            "Disabled Spaces Available: 9\n" +
+            "Metered Spaces Available: 6",
+          },
+        },
+        {
+          type: "Feature",
+          lotType: "Triangle",
+          geometry: {
+            type: "Point",
+            coordinates: [-120.6630615,35.2993545],
+          },
+          properties: {
+            title: "C5",
+            description: "Staff Spaces Available: 2\n" +
+            "Disabled Spaces Available: 5\n" +
+            "Metered Spaces Available: 2",
+          },
+        },
+        {
+          type: "Feature",
+          lotType: "Triangle",
+          geometry: {
+            type: "Point",
+            coordinates: [-120.6648362,35.3011666],
+          },
+          properties: {
+            title: "C7",
+            description: "Staff Spaces Available: 140\n" +
+            "Sponsored Guest Spaces Available: 2\n" +
+            "Disabled Spaces Available: 5\n" +
+            "Van Pool Spaces Available: 2",            
           },
         },
         {
