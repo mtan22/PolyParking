@@ -41,8 +41,8 @@ const Map = () => {
           properties: {
             title: "H-16",
             description:
-              "Commuter Spaces Available: 504 -------\n" +
-              "Staff Spaces Available: 36 -------",
+              "Commuter Spaces Available: 504\n" +
+              "Staff Spaces Available: 36",
           },
         },
         {
@@ -55,8 +55,8 @@ const Map = () => {
           properties: {
             title: "H-12",
             description:
-              "Commuter Spaces Available: 409 -------\n" +
-              "Staff Spaces Available: 25 -------",
+              "Commuter Spaces Available: 409\n" +
+              "Staff Spaces Available: 25",
           },
         },
         {
@@ -105,10 +105,10 @@ const Map = () => {
           properties: {
             title: "Grand Avenue Structure",
             description:
-              "Commuter Spaces Available: 563 -------\n" +
-              "Staff Spaces Available: 308 -------\n" +
-              "Disabled Spaces Available: 38 -------\n" +
-              "Metered Spaces Available: 5 -------",
+              "Commuter Spaces Available: 563\n" +
+              "Staff Spaces Available: 308\n" +
+              "Disabled Spaces Available: 38\n" +
+              "Metered Spaces Available: 5",
           },
         },
       ],
@@ -132,7 +132,7 @@ const Map = () => {
         .setPopup(
           new mapboxgl.Popup({ offset: 25 }) // add popups
             .setHTML(
-              `<h3>${feature.properties.title}</h3><p>${feature.properties.description}</p>`
+              `<h3>${feature.properties.title}</h3><p>${feature.properties.description.replace(/\n/g, '<br>')}</p>`
             )
         )
         .addTo(map);
