@@ -93,6 +93,21 @@ const Map = () => {
             title: 'C4',
             description: 'Test'
           }
+        },
+        {
+          type: 'Feature',
+          lotType : 'Grand',
+          geometry: {
+            type: 'Point',
+            coordinates: [-120.65721739519704, 35.298346315195815]
+          },
+          properties: {
+            title: 'Grand Avenue Structure',
+            description: 'Commuter Spaces Available: 563 -------\n' +
+            'Staff Spaces Available: 308 -------\n' +
+            'Disabled Spaces Available: 38 -------\n' +
+            'Metered Spaces Available: 5 -------',
+          }
         }
       ]
     };
@@ -104,8 +119,11 @@ const Map = () => {
       if(feature.lotType === 'Orange'){
         el.className = 'orange-marker';
       }
-      else{
+      else if(feature.lotType === 'Triangle'){
         el.className = 'triangle-marker';
+      }
+      else{
+        el.className = 'square-marker';
       }
 
 
@@ -130,8 +148,8 @@ const Map = () => {
           <span>Orange Lots</span>
         </div>
         <div class="legend-item">
-            <svg class="star" width="20" height="20" viewBox="0 0 20 20">
-            <polygon points="10,0 13,7 20,7 14,12 17,20 10,15 3,20 6,12 0,7 7,7" fill="purple" />
+          <svg class="square" width="20" height="20" viewBox="0 0 20 20">
+            <polygon points="0,0 20,0 20,20 0,20" fill="purple" />
           </svg>
           <span>Grand Structure Lots</span>
         </div>

@@ -21,7 +21,11 @@
   border-right: 8px solid transparent;
   border-bottom: 12px solid blue;
 }
-
+.square-marker {
+  width: 20px;
+  height: 20px;
+  background-color: purple;
+}
 .orangeLot {
   width: 20px;
   height: 20px;
